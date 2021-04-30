@@ -1,0 +1,9 @@
+def palindrome(a):
+  a=a.lower()
+  a=a.replace(' ','')
+  if a[::-1]==a:
+    return True
+  else:
+    return False
+
+palindrome('Ba na bc')
