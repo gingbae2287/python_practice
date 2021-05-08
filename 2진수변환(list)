@@ -1,0 +1,11 @@
+# 이진법 변환을 리스트로 나타내기
+
+num=int(input("정수입력: "))
+l=[]
+d=1
+v=1
+while(d!=0):
+  d,v=divmod(num,2)
+  l.insert(0,v)
+  num=num//2
+print(l)
