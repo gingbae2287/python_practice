@@ -1,3 +1,4 @@
+
 def sumOfDigits():
   num=int(input())
   l=list(str(num))
@@ -5,6 +6,11 @@ def sumOfDigits():
   for i in l:
     sum+=int(i)
   return sum
+#map을 
+def sumOfDigits2():
+  num=input("정수입력:")
+  l=map(int,list(num))
+  return sum(l)
 
 sumOfDigits()
 
