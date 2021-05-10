@@ -1,0 +1,40 @@
+# dict자료형 -> { } 사용
+# key 와 value 쌍으로 이루어짐 (자료구조 hash, c++ map이랑 비슷한듯?)
+
+# 빈 dict 선언후{ } 하나씩 채워가기 [ ]
+dic={}
+dic['potato']='감자'
+dic['coke']='콜라'
+ace="ace"
+dic[ace]='에이스'
+
+# 한번에 만들기 :사용
+dic2={'potato': '고구마', 'coke': '펩시', ace: '크레커'}
+
+# 사용
+a=dic['ace']
+b=dic[ace]
+c=dic['potato']
+print(a,b,c)
+
+d=dic2['potato']
+e=dic2[ace]
+print(d,e)
+print(dic2)
+
+
+# 삭제 del
+
+del dic['potato']
+
+# dict의 함수들 .keys(), .values() ->list 형식으로 저장가능
+print(dic.keys())
+print(dic.values())
+l=list(dic.keys())
+l2=list(dic.values())
+print(l, l2)
+
+if 'potato' in dic2:
+  print("dic2 have 고구마")
+else:
+  print("읎다")
