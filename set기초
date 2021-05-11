@@ -1,0 +1,24 @@
+# set 자료형 dict와 같이 { } 사용
+
+drink={'coke', 'milk','coffee', 'mango',6,6}
+print(drink)
+print(type(drink))
+
+fruits=set()
+fruits.add('mango')
+fruits.add('banana')
+fruits.add(6)
+print(fruits)
+print(type(fruits))
+
+# 교집합 &, 합집합 |
+set1=fruits & drink
+set2=fruits | drink
+print(set1)
+print(set2)
+
+# list <-> set  set는 중복원소 제거
+
+google=list('google')
+print(google)
+print(set(google))
