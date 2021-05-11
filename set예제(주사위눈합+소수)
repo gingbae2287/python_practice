@@ -1,0 +1,28 @@
+# set 예제
+# 두 주사위 눈의 합
+# 주사위1=일반주사위, 주사위2=13까지의 소수
+
+dice1=(1,2,3,4,5,6)
+dice2=()
+
+# 소수생성 복습, tuple은 변형불가능이라 list로 다루고 tuple로 변경
+num=13
+l=[]
+for i in range(num):
+  l.append(i+1)
+l.remove(1)
+for i in l:
+  j=i
+  while j+i<=num:
+    j+=i
+    if l.count(j)!=0:
+      l.remove(j)
+    
+dice2=tuple(l)
+sum=set()
+for i in dice1:
+  for j in dice2:
+    sum.add(i+j)
+    
+print(sum)
+
