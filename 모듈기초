@@ -1,0 +1,48 @@
+# 모듈 가져오기 import
+
+import math
+
+math.sqrt(2)
+math.pi
+
+import calendar
+calendar.prmonth(2021,5)
+
+# 디스플레이 되는 환경에서 가능
+# from tkinter import *
+# widget=Label(None, text='김용배')
+# widget.pack()
+
+# calendar 모듈 알아보기
+
+dir(calendar)
+[x for x in dir(calendar) if 'leap' in x]
+
+# help(calendar)
+calendar.isleap(2020)
+
+# math 모듈 사용
+
+a=3
+b=4
+c=math.sqrt(a**2+b**2)
+print(c)
+
+def hypotenuse(a,b):
+  return round(math.sqrt(a**2+b**2),2)
+
+hypotenuse(10,20)
+
+
+# random 모듈 
+
+import random
+# random 0~1 무작위
+random.random()
+#randrange 특정범위 내 무작위
+random.randrange(2,8)
+# shuffle(), choice()
+lis=['a','b','c','d','e','f']
+random.shuffle(lis)
+lis
+random.choice(lis)
