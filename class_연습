@@ -1,0 +1,87 @@
+# class
+# self 는 c++의 this 같은 느낌. 객체를 가리킴
+# 생성자 함수: __init__(self)  !언더바 두개씩 주의!
+# 소멸자: __del__      
+# __repr__   : 객체 자체를 print하면 출력될 문장-->객체를 표현
+# __add__ 연산자중복 +
+# __cmp__ 비교 연산자중복
+# 상속: class 클래스이름(상속클래스)
+
+class Person:
+  name=""
+  strength=0
+  dexterity=0
+  vitality=0
+  energy=0
+  bonus=0
+
+  level=1
+  exp=0
+
+  def levelup(self):
+    self.bonus+=5
+    self.level+=1
+  
+  def hunt(self, mob_exp):
+    self.exp+=mob_exp
+    while self.exp>=self.level*(self.level+1)/2:
+      self.levelup()
+  def up_state(self, state, num=1):
+    if self.bonus>=num:
+      if state=="str":
+        self.strength+=num
+        self.bonus-=num
+      elif state=="dex":
+        self.dexterity+=num
+        self.bonus-=num
+      elif state=="vit":
+        self.vitality+=num
+        self.bonus-=num
+      elif state=="ene":
+        self.energy+=num
+        self.bonus-=num
+    else:
+      print("스텟포인트 모자람")
+    
+  def __repr__(self):
+    p="name: "+self.name
+    p+="\nlevel: "+str(self.level)
+    p+="\nstr "+str(self.strength)
+    p+="\ndex :"+str(self.dexterity)
+    p+="\nvit :"+str(self.vitality)
+    p+="\nene :"+str(self.energy)
+    p+="\nbonus :"+str(self.bonus)
+    return p
+  
+  def __add__(self,other):
+    return self.exp+other.exp
+
+
+
+class Amazon(Person):
+  
+  def __init__(self,name):
+    self.name=name
+    self.strength=15
+    self.dexterity=20
+    self.vitality=20
+    self.energy=10
+    print("아마존생성. 이름:",self.name)
+
+  def attack(self):
+    damage=self.strength*3+self.dexterity*1
+    return print("공격 데미지:",damage)
+
+jane=Amazon("ff")
+jane.hunt(5)
+jane.level
+jane.attack()
+jane.up_state("str", 5)
+jane.attack()
+print(jane)
+
+pol=Amazon("abc")
+pol.hunt(10)
+print(pol)
+
+jane+pol
