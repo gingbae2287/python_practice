@@ -1,0 +1,12 @@
+# 예외처리 try, except 오류가 나면 except 실행
+def f(a,b):
+  try:
+    return (a*b)+(a/b)
+    # elif a:
+    #   return '0으로 나누기 안댐'
+    # else:
+    #   return '몫이 0'
+  except:
+    return '0으로 나눠서 예외처리'
+
+f(50,0)
