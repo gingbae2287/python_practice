@@ -1,9 +1,0 @@
-# sumofDigits
-
-def sumofDigits(num):
-    a=num%10
-    b=num//10
-    if b:
-        return a+sumofDigits(b)
-    if b==0:
-        return a

@@ -1,0 +1,31 @@
+# sumofDigits
+
+def sumofDigits(num):
+    a=num%10
+    b=num//10
+    if b:
+        return a+sumofDigits(b)
+    if b==0:
+        return a
+        
+
+# 복리이자_재귀
+
+def compound(p,r,t):
+    if t>0:
+        return compound(p*(1+r),r,t-1)
+    if t==0:
+        return p
+
+def compound2(p,r,t,n):
+    if t>0:
+        return compound2(p*(1+r/n)**n,r,t-1,n)
+    if t==0:
+        return p
+
+
+print(compound(1500000,0.043,6))
+print(compound2(1500000,0.043,6,4))
+
+
+    
