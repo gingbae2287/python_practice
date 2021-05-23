@@ -1,0 +1,26 @@
+# korean_0_to_100.py
+
+def korean_number():
+    num=int(input("0 이상 10만 미만 수 입력: "))
+    if num>99999:
+        return "!10만 미만의 수 입력!"
+    digit_korean=["","십","백",'천','만']
+    ten_korean=['','일','이','삼','사','오','육','칠','팔','구']
+    num_korean=['','','이','삼','사','오','육','칠','팔','구']
+    digit=len(str(num))-1
+
+    korean=""
+    if num==0:
+        return "영"
+    while digit>0:
+        if num//(10**digit)>0:
+            korean=korean+num_korean[num//(10**digit)]
+            korean=korean+digit_korean[digit]
+        num=num%(10**digit)
+        digit=digit-1
+    korean=korean+ten_korean[num]
+    print(korean)
+
+    return korean
+
+
