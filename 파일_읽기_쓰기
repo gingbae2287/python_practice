@@ -1,0 +1,41 @@
+## 'w' 모드: 새롭게 파일을 씀(기존파일이 있어도 리셋)
+
+# f=open("새파일.txt",'w',encoding="UTF-8")
+# for i in range(1,11):
+#     data="%d번째 줄\n" %i
+#     f.write(data)
+
+##readline(): 한줄만 읽어옴
+##str.strip(a) 양쪽 끝에서 a를 없에줌
+
+##'r'모드 읽기
+# f=open("새파일.txt",'r',encoding="UTF-8")
+# while 1:
+#     line=f.readline()
+#     if not line:
+#         break
+#     print(line,end="")
+
+##file.readlines(): 모든줄 읽어옴(리스트형태로 읽어옴)
+
+# lines=f.readlines()
+# for line in lines:
+#     print(line.strip("\n"))
+
+## read() 그대로 전부 읽어옴
+# data=f.read()
+# print(data)
+
+## 'a'모드: 기존 파일에 내용 추가
+
+# f=open("filtest.txt", 'a', encoding="UTF-8")
+# for i in range(11,20):
+#     data="%d줄~\n" %i
+#     f.write(data)
+# f.close()
+
+## with를 사용해서 close 안쓰기
+
+with open("noclose.txt","w") as f:
+    f.write("no close~~")
+
