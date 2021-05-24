@@ -1,0 +1,27 @@
+import time
+import random
+import webbrowser
+
+# filter
+def check(a):
+    if a>5:
+        return True
+
+a=[i for i in range(10)]
+b=list(filter(check,a))
+print(b)
+
+
+# random, time
+print("5초후 로또 번호 출력")
+
+for i in range(5):
+    print(i+1)
+    time.sleep(1)
+
+lotto=sorted(random.sample(range(1,46),6))
+print(lotto)
+
+# webbrowser
+
+webbrowser.open("http://google.com")
