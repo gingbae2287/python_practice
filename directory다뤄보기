@@ -1,0 +1,21 @@
+# 디렉토리 다루기
+# 해당 디렉토리 내에서 확장자명 검색(하위디렉토리까지)
+# os.walk를 이용하면 쉽다. but 직접 구현해보는 프로그램
+import os
+
+def search(dirname):
+    try:
+        filenames=os.listdir(dirname)
+        for filename in filenames:
+            full_filename=os.path.join(dirname,filename)
+            if os.path.isdir(full_filename):
+                search(full_filename)
+            ext=os.path.splitext(filename)[-1]
+            if ext=='.txt':
+                print(filename)
+    #접근 권한이 없는 디렉터리 접근시 넘어감
+    except PermissionError:
+        pass
+
+
+search("C:/Users/kingb/Desktop/coding/python")
