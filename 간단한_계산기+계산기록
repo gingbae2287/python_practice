@@ -1,0 +1,47 @@
+# 두 숫자의 사칙연산을 기록해주는 프로그램
+
+def calcul(num1, num2, oper):
+    result=0
+    if oper=='+':
+        result=num1+num2
+    elif oper=='-':
+        result=num1-num2
+    elif oper=='*':
+        result=num1*num2
+    elif oper=='/':
+        if num2==0:
+            result="0으로 나눌수 없다"
+        else:
+            result=round(num1/num2,3)
+    print(result)
+    data=f"{num1} {oper} {num2} = {result}\n"
+    f=open("cal_history.txt","a")
+    f.write(data)
+    f.close()
+
+if __name__=='__main__':
+    while 1:
+        a=input("(+,-,*,/)수식입력(종료 z): ")
+        if a=='z' or a=='Z':
+            print("종료")
+            break
+        idx=a.find('+')
+        if idx==-1: 
+            idx=a.find('-')
+        if idx==-1:
+            idx=a.find('*')
+        if idx==-1:
+            idx=a.find('/')
+        if idx==-1:
+            print("수식오류")
+            continue
+        try:
+            num1=int(a[:idx])
+            num2=int(a[idx+1:])
+            oper=a[idx]
+        except:
+            print("수식오류")
+        else:
+            calcul(num1,num2,oper)
+
+
