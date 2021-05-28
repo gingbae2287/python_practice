@@ -1,0 +1,18 @@
+# 정규 표현식
+import re
+
+p=re.compile('[a-zA-Z0-9]+')
+p2=re.compile('a.+b', re.DOTALL)  #줄바꿈 등을 포함해서 매칭시킴
+s="Life 567 is 34good~"
+r=p.search(s)
+r2=p.findall(s)
+s3="""
+apple iPhone 11s is expensive.
+so i bought iPhone11.
+"""
+r3=p2.search(s3)
+# r=re.search('[a-z]', " 2   absdjgsegj22")
+# r=p.findall("life is too short")
+print(r2)
+print(r)
+print(r3)
